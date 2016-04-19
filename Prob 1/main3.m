@@ -21,7 +21,7 @@ c_a=0;
 c_b=0;
 c_c=0;
 
-I=eye(1024,1024);%Regularising
+I=eye(1024,1024);%C = I
 ia=I;
 ib=I;
 ic=I;

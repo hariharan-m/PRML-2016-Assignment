@@ -7,6 +7,7 @@ c=zeros(1024,1024);
 tImgU=zeros(128,128);
 tImg=zeros(32,32);
 
+%-------------MEAN-------------%
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
     tImg=imresize(tImgU,0.25);
@@ -15,6 +16,8 @@ for i=1:samplen
     m=m+tImg;
 end
 m=m/samplen;
+
+%-------------COVARIANCE-------------%
 
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
@@ -25,4 +28,4 @@ for i=1:samplen
     c=c+ctemp;
 end
 c=c/samplen;
-cd('/home/hariharan/PRML Ass/Prob 1');
+cd('/home/hariharan/PRML/Prob 1');

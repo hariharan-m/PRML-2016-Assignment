@@ -10,7 +10,7 @@ finalm=zeros(1024,1);
 
 %-------------------MEAN----------------------%
 %FOR E
-cd('/home/hariharan/PRML Ass/TrainCharacters/1');
+cd('/home/hariharan/PRML/TrainCharacters/1');
 
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
@@ -24,7 +24,7 @@ m=m/samplen;
 finalm=finalm+m;
 
 %FOR C
-cd('/home/hariharan/PRML Ass/TrainCharacters/2');
+cd('/home/hariharan/PRML/TrainCharacters/2');
 
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
@@ -38,7 +38,7 @@ m=m/samplen;
 finalm=finalm+m;
 
 %FOR L
-cd('/home/hariharan/PRML Ass/TrainCharacters/3');
+cd('/home/hariharan/PRML/TrainCharacters/3');
 
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
@@ -55,7 +55,7 @@ finalm=finalm/3;
 
 %-------------------COVARIANCE----------------------%
 %FOR E
-cd('/home/hariharan/PRML Ass/TrainCharacters/1');
+cd('/home/hariharan/PRML/TrainCharacters/1');
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
     tImg=imresize(tImgU,0.25);
@@ -65,7 +65,7 @@ for i=1:samplen
     c=c+ctemp;
 end
 
-cd('/home/hariharan/PRML Ass/TrainCharacters/2');
+cd('/home/hariharan/PRML/TrainCharacters/2');
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
     tImg=imresize(tImgU,0.25);
@@ -75,7 +75,7 @@ for i=1:samplen
     c=c+ctemp;
 end
 
-cd('/home/hariharan/PRML Ass/TrainCharacters/3');
+cd('/home/hariharan/PRML/TrainCharacters/3');
 for i=1:samplen
     tImgU= imread(sprintf('%d.jpg',i));
     tImg=imresize(tImgU,0.25);
@@ -86,4 +86,4 @@ for i=1:samplen
 end
 
 c=c/(3*samplen);
-cd('/home/hariharan/PRML Ass/Prob 1');
+cd('/home/hariharan/PRML/Prob 1');

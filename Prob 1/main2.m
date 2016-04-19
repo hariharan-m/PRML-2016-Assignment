@@ -1,9 +1,9 @@
 clear all;
 warning off;
-reg = 0.4;
-addr_a='/home/hariharan/PRML Ass/TrainCharacters/1';
-addr_b='/home/hariharan/PRML Ass/TrainCharacters/2';
-addr_c='/home/hariharan/PRML Ass/TrainCharacters/3';
+reg = 0.4;%Lamda for Regularising
+addr_a='/home/hariharan/PRML/TrainCharacters/1';
+addr_b='/home/hariharan/PRML/TrainCharacters/2';
+addr_c='/home/hariharan/PRML/TrainCharacters/3';
 [ma ca] = mc1(addr_a);
 [mb cb] = mc1(addr_b);
 [mc cc] = mc1(addr_c);
@@ -14,7 +14,7 @@ ca=fc;
 cb=fc;
 cc=fc;
 
-a_a=0;
+a_a=0;%Variables for counting the images classified to a certain class
 a_b=0;
 a_c=0;
 
@@ -26,7 +26,7 @@ c_a=0;
 c_b=0;
 c_c=0;
 
-I=eye(1024,1024);
+I=eye(1024,1024);%Regularising
 ia=inv(ca+(reg*I));
 ib=inv(cb+(reg*I));
 ic=inv(cc+(reg*I));
@@ -42,7 +42,7 @@ bwc=[];
 cwa=[];
 cwb=[];
 
-cd('/home/hariharan/PRML Ass/TestCharacters/TestCharacters/1');
+cd('/home/hariharan/PRML/TestCharacters/TestCharacters/1');
 for i=201:300
     tImgU= imread(sprintf('%d.jpg',i));
     tImg=imresize(tImgU,0.25);
@@ -65,7 +65,7 @@ for i=201:300
     end    
 end
 
-cd('/home/hariharan/PRML Ass/TestCharacters/TestCharacters/2');
+cd('/home/hariharan/PRML/TestCharacters/TestCharacters/2');
 for i=201:300
     tImgU= imread(sprintf('%d.jpg',i));
     tImg=imresize(tImgU,0.25);
@@ -88,7 +88,7 @@ for i=201:300
     end    
 end
 
-cd('/home/hariharan/PRML Ass/TestCharacters/TestCharacters/3');
+cd('/home/hariharan/PRML/TestCharacters/TestCharacters/3');
 for i=201:300
     tImgU= imread(sprintf('%d.jpg',i));
     tImg=imresize(tImgU,0.25);
@@ -126,4 +126,4 @@ fprintf('C misclassified as A\n');
 display(cwa');
 fprintf('C misclassified as B\n');
 display(cwb');
-cd('/home/hariharan/PRML Ass/Prob 1')
+cd('/home/hariharan/PRML/Prob 1')
